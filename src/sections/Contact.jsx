@@ -4,8 +4,8 @@ import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Text, useTexture } from "@react-three/drei";
 import { a, useSpring } from "@react-spring/three";
-import TitleHeader from "../components/TitleHeader";
-import SleepingDev from "../components/models/contact/SleepingDev";
+import TitleHeader from "../components/TitleHeader.jsx";
+import SleepingDev from "../components/models/contact/SleepingDev.jsx";
 
 
 // 🌟 SCENE
