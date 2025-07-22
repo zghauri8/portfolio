@@ -7,7 +7,6 @@ import { a, useSpring } from "@react-spring/three";
 import TitleHeader from "../components/TitleHeader.jsx";
 import SleepingDev from "../components/models/contact/SleepingDev.jsx";
 
-
 // 🌟 SCENE
 const Scene = ({ textAnim }) => {
   const roadTexture = useTexture(
@@ -18,7 +17,11 @@ const Scene = ({ textAnim }) => {
     <>
       {/* 🌑 Dimmed environment allows yellow beam to pop */}
       <ambientLight intensity={0.1} />
-      <hemisphereLight skyColor={"#ffffff"} groundColor={"#111111"} intensity={0.05} />
+      <hemisphereLight
+        skyColor={"#ffffff"}
+        groundColor={"#111111"}
+        intensity={0.05}
+      />
 
       {/* ✅ BRIGHT GOLD Spotlight now wrapping around character */}
       <spotLight
@@ -56,39 +59,38 @@ const Scene = ({ textAnim }) => {
       </mesh> */}
 
       {/* 🌕 Glow Floor Base aligned with middle */}
-      <mesh rotation={[-Math.PI/ 2, 0, 0]} position={[0, 0, 0]}>
-  <circleGeometry args={[10, 64]} />
-  <meshStandardMaterial
-    color="#ffcc00"
-    emissive="#ffd84d"
-    emissiveIntensity={0}
-    transparent
-    opacity={0.1}
-    depthWrite={false}
-    side={4}
-  />
-</mesh>
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]}>
+        <circleGeometry args={[10, 64]} />
+        <meshStandardMaterial
+          color="#ffcc00"
+          emissive="#ffd84d"
+          emissiveIntensity={0}
+          transparent
+          opacity={0.1}
+          depthWrite={false}
+          side={4}
+        />
+      </mesh>
 
       {/* 👨‍💻 Developer in Dreams */}
       <SleepingDev />
 
       {/* ✉ Animated Scrolling Text */}
       <a.group position={textAnim.position}>
-       <Text
-  position={[0, -1.58, 0]}
-  rotation={[-Math.PI / 2, 0, 0]}
-  fontSize={0.4}
-  letterSpacing={-0.015}
-  lineHeight={1.3}
-  maxWidth={10}
-  font="/fonts/BebasNeue-Regular.ttf" // ✅ You must include this in public/fonts
-  color="#ffe98a"
-  anchorX="center"
-  anchorY="middle"
->
-  {"He’s not ignoring you...just debugging his dreams."}
-</Text>
-
+        <Text
+          position={[0, -1.58, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          fontSize={0.4}
+          letterSpacing={-0.015}
+          lineHeight={1.3}
+          maxWidth={10}
+          font="/fonts/BebasNeue-Regular.ttf" // ✅ You must include this in public/fonts
+          color="#ffe98a"
+          anchorX="center"
+          anchorY="middle"
+        >
+          {"He’s not ignoring you...just debugging his dreams."}
+        </Text>
       </a.group>
 
       {/* 🛣 FLOOR */}
@@ -98,11 +100,7 @@ const Scene = ({ textAnim }) => {
         receiveShadow
       >
         <planeGeometry args={[20, 20]} />
-        <meshStandardMaterial
-          map={roadTexture}
-          roughness={1}
-          metalness={0.1}
-        />
+        <meshStandardMaterial map={roadTexture} roughness={1} metalness={0.1} />
       </mesh>
 
       <OrbitControls enableZoom={false} enablePan={false} />
@@ -168,6 +166,7 @@ const Contact = () => {
                 ref={formRef}
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7"
+                style={{ width: "100%" }}
               >
                 <div>
                   <label htmlFor="name">Your Name</label>
@@ -208,17 +207,19 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
-                  <div className="cta-button group">
-                    <div className="bg-circle" />
-                    <p className="text">
-                      {loading ? "Sending..." : "Send Message"}
-                    </p>
-                    <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
-                    </div>
-                  </div>
-                </button>
+                <div style={{ width: "100%" }}>
+                  <button type="submit" className="w-full">
+  <div className="w-full px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden group">
+    <div className="absolute -right-10 origin-center top-1/2 -translate-y-1/2 w-[120%] h-[120%] group-hover:size-10 group-hover:right-10 rounded-full bg-white-50 transition-all duration-500" />
+    <p className="uppercase md:text-lg text-black transition-all duration-500 group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5">
+      {loading ? "Sending..." : "Send Message"}
+    </p>
+    <div className="group-hover:bg-white-50 size-10 rounded-full absolute right-10 top-1/2 -translate-y-1/2 flex justify-center items-center overflow-hidden">
+      <img src="/images/arrow-down.svg" alt="arrow" className="size-5 xl:-translate-y-32 translate-y-0 animate-bounce group-hover:translate-y-0 transition-all duration-500" />
+    </div>
+  </div>
+</button>
+                </div>
               </form>
             </div>
           </div>

@@ -109,14 +109,14 @@ const AppShowcase = () => {
                 src="/images/rental.png"
                 alt="Rental App"
                 className="w-full"
-                link="https://g-arena-jrez.vercel.app" // Add link to the image
+                link="https://main.d3cdcqx8wyv7ku.amplifyapp.com" // Add link to the image
                 style={{ cursor: "pointer" }} // Make the image clickable
-                onClick={() => window.open("https://g-arena-jrez.vercel.app", "_blank")}
+                onClick={() => window.open("https://main.d3cdcqx8wyv7ku.amplifyapp.com", "_blank")}
               />
             </div>
 
             <h2 className="text-xl font-semibold mt-4 text-white text-center">
-              RENTFIUL - A NextJS Rental Platform
+              RentHive - A NextJS Rental Platform
             </h2>
           </div>
 

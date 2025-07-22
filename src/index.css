@@ -210,7 +210,8 @@ section {
   }
 
   .cta-button {
-    @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+  @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden w-full;
+  }
 
     .bg-circle {
       @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
@@ -282,23 +283,27 @@ section {
   }
 
   form {
-    label {
-      @apply block text-white-50 mb-2;
-    }
+  label {
+    @apply block text-white-50 mb-2;
+  }
 
-    input,
-    textarea {
-      @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
-    }
+  input,
+  textarea {
+    @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md;
+  }
 
-    a {
-      @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2;
+  button[type="submit"] {
+    @apply w-full block;
+  }
 
-      img {
-        @apply inline-block;
-      }
+  a {
+    @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2;
+
+    img {
+      @apply inline-block;
     }
   }
+}
 
   .footer {
     @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;
@@ -323,7 +328,7 @@ section {
       }
     }
   }
-}
+
 
 /* Hero text slider starts */
 .slide {
@@ -472,4 +477,54 @@ section {
 
 .card:hover::before {
   opacity: 1;
+}
+
+/* Force button to be full width - put this at the very end of your CSS file */
+.contact-form-button {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+  padding: 16px !important;
+  border-radius: 8px !important;
+  background-color: #282732 !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+}
+
+.contact-form-button .bg-circle {
+  position: absolute !important;
+  right: -40px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 120% !important;
+  height: 120% !important;
+  border-radius: 50% !important;
+  background-color: #d9ecff !important;
+  transition: all 0.5s !important;
+}
+
+.contact-form-button .text {
+  text-transform: uppercase !important;
+  font-size: 16px !important;
+  color: black !important;
+  transition: all 0.5s !important;
+  transform: translateX(-20px) !important;
+}
+
+.contact-form-button .arrow-wrapper {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  position: absolute !important;
+  right: 40px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  overflow: hidden !important;
 }
