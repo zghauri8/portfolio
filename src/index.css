@@ -39,6 +39,8 @@ section {
 }
 
 @layer components {
+
+  
   .padding-x {
     @apply px-5 md:px-10;
   }
