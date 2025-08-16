@@ -58,19 +58,19 @@ const AppShowcase = () => {
         >
           <div className="rounded-xl overflow-hidden">
             <img
-              src="/images/project1.png"
+              src="/images/converso.jpeg"
               alt="Ryde App Interface"
               className="w-full object-cover"
-              link="https://g-arena-jrez.vercel.app" // Add link to the image
+              link="https://converso-ai-saas.vercel.app" // Add link to the image
               style={{ cursor: "pointer" }} // Make the image clickable
-              onClick={() => window.open("https://g-arena-jrez.vercel.app", "_blank")}
+              onClick={() => window.open("https://converso-ai-saas.vercel.app", "_blank")}
             />
           </div>
           <h2 className="text-2xl md:text-xl font-bold">
-            On-Demand Rides Made Simple with a Powerful, User-Friendly App called GoXpress.
+            Converso – An AI SaaS platform that enables intelligent chat and voice interactions with a clean, modern UI and secure authentication.
           </h2>
           <p className="text-white-50 md:text-xs">
-            An app built with React JS, MongoDB & TailwindCSS for a fast, user-friendly experience.
+            Developed using Next.js and Tailwind CSS, integrated with Clerk for auth, Supabase for backend, Vapi for AI features, Sentry for monitoring, and deployed on Vercel.
           </p>
         </div>
 
